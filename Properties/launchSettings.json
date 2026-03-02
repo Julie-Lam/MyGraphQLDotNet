@@ -23,6 +23,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7182;http://localhost:5183",
+      "launchUrl": "graphQL",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
