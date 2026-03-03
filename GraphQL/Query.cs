@@ -27,4 +27,12 @@ namespace MyGraphQLDotNet.GraphQL
             return JsonSerializer.Deserialize<List<Book>>(jsonString, new JsonSerializerOptions { PropertyNameCaseInsensitive = true, Converters = { new JsonStringEnumConverter() } })!;
         }
     }
+
+    public class BookType : ObjectType<Book> 
+    {
+        protected override void Configure(IObjectTypeDescriptor<Book> descriptor)
+        {
+            descriptor.Field("publishDate").ResolveWith<Resolvers>(r => r.GetFormattedDate(default!)); 
+        }
+    }
 }
